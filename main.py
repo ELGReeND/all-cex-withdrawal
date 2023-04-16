@@ -10,10 +10,10 @@ network = "ERC20"     # ID сети
 proxy_server = "http://login:password@IP:port"
 
 #----second-options----#
-amount = [1.5, 2.5]          # минимальная и максимальная сумма
+address = sys.argv[1]
+amount = [sys.argv[2], sys.argv[3]]          # минимальная и максимальная сумма
 decimal_places = 4           # количество знаков, после запятой для генерации случайных чисел
 delay = [0, 0]             # минимальная и максимальная задержка
-shuffle_wallets = "no"       # нужно ли мешать кошельки yes/no
 #----end-all-options----#
 
 class API:
@@ -263,31 +263,12 @@ def get_withdrawal_fee(symbolWithdraw, chainName):
                             return withdrawal_fee
     raise ValueError(f"     не могу получить сумму комиссии, проверьте значения symbolWithdraw и network")
 
-def shuffle(wallets_list, shuffle_wallets):
-    numbered_wallets = list(enumerate(wallets_list, start=1))
-    if shuffle_wallets.lower() == "yes":
-        random.shuffle(numbered_wallets)
-    elif shuffle_wallets.lower() == "no":
-        pass
-    else:
-        raise ValueError("\n>>> Неверное значение переменной 'shuffle_wallets'. Ожидается 'yes' или 'no'.")
-    return numbered_wallets
-
 if __name__ == "__main__":
-    with open("wallets.txt", "r") as f:
-        wallets_list = [row.strip() for row in f if row.strip()]
-        numbered_wallets = shuffle(wallets_list, shuffle_wallets)
-        print(f'developed by th0masi [https://t.me/thor_lab]')
-        print(f'Number of wallets: {len(wallets_list)}')
-        print(f"CEX: {switch_cex}")
-        print(f"Amount: {amount[0]} - {amount[1]} {symbolWithdraw}")
-        print(f"Network: {network}")
-        time.sleep(random.randint(2, 4))
+    print(f'developed by th0masi [https://t.me/thor_lab]')
+    print(f"CEX: {switch_cex}")
+    print(f"Amount: {amount[0]} - {amount[1]} {symbolWithdraw}")
+    print(f"Network: {network}")
 
-        for wallet_number, address in numbered_wallets:
-            amount_to_withdrawal = round(random.uniform(amount[0], amount[1]), decimal_places)
-            choose_cex(address, amount_to_withdrawal, wallet_number)
-            time.sleep(random.randint(delay[0], delay[1]))
-
-
-
+    amount_to_withdrawal = round(random.uniform(amount[0], amount[1]), decimal_places)
+    choose_cex(address, amount_to_withdrawal, 1)
+    time.sleep(random.randint(delay[0], delay[1]))
