@@ -1,6 +1,7 @@
 import time
 import ccxt
 import random
+import sys
 
 #----main-options----#
 switch_cex = "okx"       # binance, mexc, kucoin, gate, okx, huobi, bybit
@@ -10,8 +11,8 @@ proxy_server = "http://login:password@IP:port"
 
 #----second-options----#
 amount = [1.5, 2.5]          # минимальная и максимальная сумма
-decimal_places = 2           # количество знаков, после запятой для генерации случайных чисел
-delay = [35, 85]             # минимальная и максимальная задержка
+decimal_places = 4           # количество знаков, после запятой для генерации случайных чисел
+delay = [0, 0]             # минимальная и максимальная задержка
 shuffle_wallets = "no"       # нужно ли мешать кошельки yes/no
 #----end-all-options----#
 
