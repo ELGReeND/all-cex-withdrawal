@@ -1,4 +1,4 @@
-# all-cex-withdrawal
+# all-cex-withdrawal-bashfrendly
 Автоматический вывод токенов в любые сети из binance, mexc, kucoin, gate, okx, huobi, bybit
 
 bybit временно не работает!
