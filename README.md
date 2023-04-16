@@ -7,7 +7,7 @@ bybit временно не работает!
 
 Сохранить файл с именем main.py  
 Установить библиотеку ccxt   ```pip install ccxt```  
-Открыть терминал и выполнить команду python main.py <addr> <amountMin> <amountMax>
+Открыть терминал и выполнить команду python main.py /<addr/> /<amountMin/> /<amountMax/>
 
 # Поддержка/Вопросы
 
