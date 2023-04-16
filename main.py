@@ -3,9 +3,9 @@ import ccxt
 import random
 
 #----main-options----#
-switch_cex = "binance"       # binance, mexc, kucoin, gate, okx, huobi, bybit
-symbolWithdraw = "USDT"      # символ токена
-network = "Arbitrum One"     # ID сети
+switch_cex = "okx"       # binance, mexc, kucoin, gate, okx, huobi, bybit
+symbolWithdraw = "ETH"      # символ токена
+network = "ERC20"     # ID сети
 proxy_server = "http://login:password@IP:port"
 
 #----second-options----#
@@ -78,7 +78,7 @@ def okx_withdraw(address, amount_to_withdrawal, wallet_number):
         'secret': API.okx_apisecret,
         'password': API.okx_passphrase,
         'enableRateLimit': True,
-        'proxies': proxies,
+        # 'proxies': proxies,
     })
 
     try:
@@ -243,7 +243,7 @@ def get_withdrawal_fee(symbolWithdraw, chainName):
         'secret': API.okx_apisecret,
         'password': API.okx_passphrase,
         'enableRateLimit': True,
-        'proxies': proxies,
+        # 'proxies': proxies,
     })
     currencies = exchange.fetch_currencies()
     for currency in currencies:
