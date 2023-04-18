@@ -264,7 +264,7 @@ def get_withdrawal_fee(symbolWithdraw, chainName):
     raise ValueError(f"     не могу получить сумму комиссии, проверьте значения symbolWithdraw и network")
 
 if __name__ == "__main__":
-    print(f'developed by th0masi [https://t.me/thor_lab]' "CEX: {switch_cex}" "Amount: {amount[0]} - {amount[1]} {symbolWithdraw}" "Network: {network}")
+    print(f'developed by th0masi [https://t.me/thor_lab] "CEX: {switch_cex}" "Amount: {amount[0]} - {amount[1]} {symbolWithdraw}" "Network: {network}"')
 
     amount_to_withdrawal = round(random.uniform(amount[0], amount[1]), decimal_places)
     choose_cex(address, amount_to_withdrawal, 1)
