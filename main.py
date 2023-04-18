@@ -11,7 +11,7 @@ proxy_server = "http://login:password@IP:port"
 
 #----second-options----#
 address = sys.argv[1]
-amount = [sys.argv[2], sys.argv[3]]          # минимальная и максимальная сумма
+amount = [float(sys.argv[2]), float(sys.argv[3])]          # минимальная и максимальная сумма
 decimal_places = 4           # количество знаков, после запятой для генерации случайных чисел
 delay = [0, 0]             # минимальная и максимальная задержка
 #----end-all-options----#
